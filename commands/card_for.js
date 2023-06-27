@@ -3,13 +3,9 @@ const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 function compare3(a, b, c, d) {
     let ans = a * b - c * d;
     let reply = "這裡是空的";
-    if (ans > 0) {
-        reply = "利奧拉贏了";
-    } else if (ans < 0) {
-        reply = "利奧拉輸了";
-    } else {
-        reply = "兩人平手";
-    }
+
+    // 我們可以在這邊加上甚麼呢
+
     return reply;
 }
 
@@ -29,7 +25,9 @@ module.exports = {
         let c = interaction.options.getNumber("長_史考特"); // 已經幫你們宣告好變數了，這裡不需要改
         let d = interaction.options.getNumber("寬_史考特"); // 已經幫你們宣告好變數了，這裡不需要改
 
-        let reply = compare3(a, b, c, d);
+        //好像應該有一個迴圈?
+        let reply = compare3(); //如何判斷牌的大小
+
         await interaction.reply(`${reply}`);
     },
 };
