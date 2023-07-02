@@ -9,8 +9,8 @@ module.exports = {
         )
         .addStringOption((option) =>
             option
-                .setName("type")
-                .setDescription("choose a way to calculate a b ")
+                .setName("計算方式")
+                .setDescription("在四則運算中選擇一個來計算 a b ")
                 .setRequired(true)
                 .addChoices(
                     {
@@ -35,7 +35,7 @@ module.exports = {
             option.setName("b").setDescription("請輸入 b").setRequired(true),
         ),
     async execute(client, interaction) {
-        let type = interaction.options.getString("type");
+        let type = interaction.options.getString("計算方式");
         let a = interaction.options.getNumber("a");
         let b = interaction.options.getNumber("b");
         let ans;

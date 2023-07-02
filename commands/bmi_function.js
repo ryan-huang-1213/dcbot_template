@@ -16,7 +16,7 @@ function bmi_compare(height, weight) {
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("bmi_function")
-        .setDescription("計算出你的 BMI ")
+        .setDescription("來看看BMI的公式版本可不可以正常運行")
         .addNumberOption((option) =>
             option.setName("身高").setDescription("輸入你的身高(公尺)").setRequired(true),
         )

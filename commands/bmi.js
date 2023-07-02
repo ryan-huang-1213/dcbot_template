@@ -20,5 +20,3 @@ module.exports = {
         await interaction.reply(`${bmi}`);
     },
 };
-/*
- */

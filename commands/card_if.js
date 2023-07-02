@@ -23,7 +23,7 @@ module.exports = {
         let d = interaction.options.getNumber("寬_史考特"); // 已經幫你們宣告好變數了，這裡不需要改
         let bmi = a - b * b; // 公式好像怪怪的，應該要如何更改呢?
         if (bmi < 18.5) {
-            // 如何判斷 大 小
+            // 如何判斷 大或小
             await interaction.reply(`體重過輕 bmi=${bmi}`); // 如果符合，應該回覆甚麼訊息
         } else if (bmi >= 18.5 && bmi < 24) {
             // 應該要如何判斷剩下的

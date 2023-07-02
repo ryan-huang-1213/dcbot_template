@@ -24,7 +24,6 @@ module.exports = {
         } else {
             await interaction.reply(`體重過重 bmi=${bmi}`);
         }
-        await interaction.reply(`${bmi}`);
     },
 };
 /*
