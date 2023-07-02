@@ -13,7 +13,11 @@ module.exports = {
     async execute(client, interaction) {
         let a = interaction.options.getString("想說的話");
         let n = interaction.options.getNumber("n");
-        await interaction.reply(`hi`);
+        if (n <= 0) {
+            await interaction.reply(`抱歉，我想${n}應該不是正常的數字`);
+            return;
+        }
+        await interaction.reply("hi");
         for (let i = 1; i <= n; i++) {
             interaction.followUp(`${i}. 你剛剛說的是 "${a}" 嗎?`);
         }

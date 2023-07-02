@@ -2,7 +2,7 @@ const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName("bmi")
+        .setName("bmi_if")
         .setDescription("計算出你的 BMI ")
         .addNumberOption((option) =>
             option.setName("身高").setDescription("輸入你的身高(公尺)").setRequired(true),
@@ -13,10 +13,17 @@ module.exports = {
     async execute(client, interaction) {
         let height = interaction.options.getNumber("身高");
         let weight = interaction.options.getNumber("體重");
+        let bmi = weight / (height * height);
         if (height > 100) {
             height = height / 100;
         }
-        let bmi = weight / (height * height);
+        if (bmi < 18.5) {
+            await interaction.reply(`體重過輕 bmi=${bmi}`);
+        } else if (bmi >= 18.5 && bmi < 24) {
+            await interaction.reply(`體重適中 bmi=${bmi}`);
+        } else {
+            await interaction.reply(`體重過重 bmi=${bmi}`);
+        }
         await interaction.reply(`${bmi}`);
     },
 };

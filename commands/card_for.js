@@ -1,17 +1,8 @@
 const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 
-function compare3(a, b, c, d) {
-    let ans = a * b - c * d;
-    let reply = "這裡是空的";
-
-    // 我們可以在這邊加上甚麼呢
-
-    return reply;
-}
-
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName("card_function")
+        .setName("card_for")
         .setDescription("計算出兩人的牌誰比較大")
         .addNumberOption((option) =>
             option.setName("長_史考特").setDescription("輸入史考特的牌有多長").setRequired(true),
@@ -25,8 +16,7 @@ module.exports = {
         let c = interaction.options.getNumber("長_史考特"); // 已經幫你們宣告好變數了，這裡不需要改
         let d = interaction.options.getNumber("寬_史考特"); // 已經幫你們宣告好變數了，這裡不需要改
 
-        //好像應該有一個迴圈?
-        let reply = compare3(); //如何判斷牌的大小
+        let reply = "施工中請稍後";
 
         await interaction.reply(`${reply}`);
     },
